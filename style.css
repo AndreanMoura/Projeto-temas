@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --textcolor: white;
+  --bg-url:url(./assets/bg-mobile.jpg);
+  --stroke-color:border: 1px solid rgba(255, 255, 255, 0.5);
+  --surface-color:rgba(255, 255, 255, 0.192);
+  --surface-color-hover:rgba(0, 0, 0, 0.02);
+  --high-light-color:rgba(255, 255, 255, 0.2);
+  --Swithc-bg-url:url(./assets/moon-stars.svg)
+}
+.light {
+  --textcolor: black;
+  --bg-url::url(./assets/bg-mobile-light.jpg);
+  --stroke-color:rgba(0, 0, 0, 0.5);
+  --surface-color:rgba(0, 0, 0, 0.05);
+   --surface-color-hover:rgba(0, 0, 0, 0.02);
+   --high-light-color: rgba(0, 0, 0, 0.1);
+   --Swithc-bg-url:url(./assets/sun.svg)
+}
+body {
+  /* background-image: url(./assets/bg-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  */
+  /*background: color image repeat position/size*/
+  background: var(--bg-url) no-repeat top center/cover;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--textcolor);
+  /* isso e um corpo*/
+}
+
+#container {
+  width: 360px;
+  margin: 56px auto 0px;
+  padding: 0 24px;
+  /* isso e uma caixa/ o matgin pode ser usado como relogio, hoje pode ser usado no exemplo acima, de acordo com a necessidade*/
+}
+
+/*Profile*/
+#profile {
+  text-align: center;
+  padding: 24px;
+  /* isso e uma div com id, identificador */
+}
+
+#profile img {
+  width: 112px;
+  /* o uso do height em imagens não e necessario*/
+}
+
+#profile p {
+  font-weight: 500;
+  margin-top: 8px;
+  line-height: 24px;
+}
+/*Swithc*/
+
+#Swithc{
+  position: relative;
+  width: 64px;
+
+  margin: 4px auto;
+}
+
+#Swithc button {
+  width: 32px;
+  height: 32px;
+  background: white var(--Swithc-bg-url)no-repeat center;
+  border: 0;
+  border-radius: 50%;
+  
+  position: absolute;
+  top: 50%;
+ left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.light #Swithc button {
+  right: 0;
+  left: initial;
+}
+
+#Swithc span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+/*links*/
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+}
+ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px 24px;
+
+  background:var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+/* display: flex;
+  justify-content: center;
+  Alinhamento de dados ao centro dispositivo de alinhamento
+   funciona bem em colunas, font-weight: 500; o bold pode ser usado em fontes acima de (500)*/
+ul li a:hover {
+  background-color: var(--surface-color-hover);
+  border: 1.5px solid var(--textcolor);
+}
+
+/*social-links*/
+
+#social-links {
+  display: flex;
+  justify-content: center;
+
+  padding: 24px 0;
+  font-size: 24px;
+}
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+#social-links a:hover {
+  background: var(--high-light-color);
+}
+
+footer {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 12px;
+}
